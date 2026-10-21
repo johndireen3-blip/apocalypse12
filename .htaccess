@@ -1,0 +1,16 @@
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+RewriteEngine On
+# /page.html -> /page
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+RewriteRule ^ /%1 [L,R=301]
+# /page -> page.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType text/css "access plus 1 week"
+ExpiresByType image/svg+xml "access plus 1 month"
+</IfModule>
