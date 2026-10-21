@@ -180,3 +180,15 @@ a.sref:hover{color:var(--blue);text-decoration-style:solid}
 .st-against{background:var(--dragon-bg);color:var(--dragon)}
 .st-assess{background:var(--mystery-bg);color:var(--mystery)}
 .open{color:var(--muted);font-style:italic}
+
+/* Home: John on Patmos and the welcome message */
+.patmos{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:32px;align-items:center;margin:40px 0 8px}
+.patmos figure{margin:0}
+.patmos img{width:100%;height:auto;border-radius:10px;border:1px solid var(--line);display:block}
+.patmos figcaption{font-family:var(--sans);font-size:.78rem;color:var(--muted);margin-top:8px;line-height:1.5}
+.patmos blockquote{font-family:var(--serif);font-size:1.35rem;font-style:italic;line-height:1.5;border-left:3px solid var(--gold);margin:0 0 16px;padding:4px 0 4px 18px;color:var(--blue)}
+.patmos cite{display:block;font-family:var(--sans);font-style:normal;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;margin-top:8px;color:var(--gold)}
+.welcome{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:12px;padding:8px 28px 22px;margin:40px 0}
+.welcome h2{margin-top:20px}
+.welcome .sig{font-family:var(--serif);font-size:1.3rem;font-style:italic;text-align:right;margin:8px 0 0}
+@media (max-width:720px){.patmos{grid-template-columns:1fr;gap:20px}.patmos figure{max-width:300px;margin:0 auto}.welcome{padding:4px 18px 18px}}
