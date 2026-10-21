@@ -19,7 +19,7 @@ SITE_NAME = "The Woman & the Dragon"
 PRELAUNCH = True
 TODAY = datetime.date.today().isoformat()
 # Fr. John's contact address for this site; until it is chosen, pages say it is coming.
-CONTACT_EMAIL = ""
+CONTACT_EMAIL = "frjohn@apocalypse12.org"
 def email_html():
     return (f'<a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a>' if CONTACT_EMAIL
             else "the contact address on this site's Contact page (coming soon)")
