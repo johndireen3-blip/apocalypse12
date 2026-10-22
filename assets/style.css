@@ -192,3 +192,4 @@ a.sref:hover{color:var(--blue);text-decoration-style:solid}
 .welcome h2{margin-top:20px}
 .welcome .sig{font-family:var(--serif);font-size:1.3rem;font-style:italic;text-align:right;margin:8px 0 0}
 @media (max-width:720px){.patmos{grid-template-columns:1fr;gap:20px}.patmos figure{max-width:300px;margin:0 auto}.welcome{padding:4px 18px 18px}}
+.also{font-family:var(--sans);font-size:.88rem;background:var(--blue-soft);border-radius:8px;padding:10px 14px;margin:20px 0 8px}
