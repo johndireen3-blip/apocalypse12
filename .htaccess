@@ -2,6 +2,33 @@ Options -Indexes
 DirectoryIndex index.html
 ErrorDocument 404 /404.html
 RewriteEngine On
+# Old WordPress addresses (apocalypse12.org until 2026) -> their new pages
+RewriteRule ^2025/07/06/hello-world/?$ / [L,R=301]
+RewriteRule ^2025/07/07/modern-relevance-of-revelation/?$ /about [L,R=301]
+RewriteRule ^2025/07/10/reflections-on-spiritual-warfare/?$ /revelation-12-1 [L,R=301]
+RewriteRule ^2025/07/12/she-was-with-child/?$ /revelation-12-2 [L,R=301]
+RewriteRule ^2025/07/17/the-dragons-identity/?$ /revelation-12-3-4 [L,R=301]
+RewriteRule ^2025/07/21/end-times-perspectives/?$ /revelation-12-5 [L,R=301]
+RewriteRule ^2025/08/22/the-symbolism-of-the-woman/?$ /revelation-12-6 [L,R=301]
+RewriteRule ^2025/08/23/understanding-revelation-12/?$ /revelation-12-7-9 [L,R=301]
+RewriteRule ^2025/09/08/birth-of-the-blessed-virgin-mary/?$ /revelation-12-10-12 [L,R=301]
+RewriteRule ^archive/?$ /revelation-12 [L,R=301]
+RewriteRule ^a-reading-guide/?$ / [L,R=301]
+RewriteRule ^alpha-omega/?$ /revelation-12 [L,R=301]
+RewriteRule ^mary-the-saints/?$ /mary-and-the-saints [L,R=301]
+RewriteRule ^our-lady-of-fatima/?$ /mary-and-the-saints [L,R=301]
+RewriteRule ^the-end-of-the-present-world/?$ /what-the-tradition-says [L,R=301]
+RewriteRule ^666-2/?$ /666-and-the-mark [L,R=301]
+RewriteRule ^the-antichrist/?$ /the-first-beast [L,R=301]
+RewriteRule ^demands-worship/?$ /the-first-beast [L,R=301]
+RewriteRule ^apostasy/?$ /the-great-apostasy [L,R=301]
+RewriteRule ^the-false-prophet/?$ /the-second-beast [L,R=301]
+RewriteRule ^concerns-of-our-contemporaries/?$ /scorecard [L,R=301]
+RewriteRule ^the-angels/?$ /angels-apostles-and-martyrs [L,R=301]
+RewriteRule ^apostles-past-present/?$ /angels-apostles-and-martyrs [L,R=301]
+RewriteRule ^ai-quantum/?$ /the-second-beast [L,R=301]
+RewriteRule ^pandemic/?$ /the-timing [L,R=301]
+RewriteRule ^feed/?$ / [L,R=301]
 # /page.html -> /page
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
 RewriteRule ^ /%1 [L,R=301]
