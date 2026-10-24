@@ -90,7 +90,7 @@ def _logo():
     return ('<svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="27" r="25" fill="#1c2550"/>' + stars +
             '<circle cx="32" cy="27" r="11" fill="#e3c47a"/><circle cx="32" cy="27" r="7" fill="#f6e3a8"/>'
             '<path d="M13 53 Q32 66 51 53 Q32 59 13 53 Z" fill="#c9a243"/></svg>')
-LOGO = _logo()
+LOGO = '<img src="/assets/logo.png" width="46" height="46" alt="">'  # Our Lady of Guadalupe crushing the dragon (Fr. John's logo); _logo() kept for reference
 
 BOOKS = {"Genesis":"genesis","Exodus":"exodus","Leviticus":"leviticus","Numbers":"numbers","Deuteronomy":"deuteronomy",
 "Joshua":"joshua","Judges":"judges","Ruth":"ruth","1 Samuel":"1samuel","2 Samuel":"2samuel","1 Kings":"1kings","2 Kings":"2kings",
@@ -187,7 +187,8 @@ def page(slug, meta, body):
 <meta property="og:description" content="{meta['description']}">
 <meta property="og:url" content="{SITE}{path}">
 <meta property="og:locale" content="en_US">
-<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;600;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css?v={CSS_VERSION}">
@@ -263,7 +264,6 @@ def main():
         (d / "assets").mkdir(parents=True)
         for f in (ROOT / "assets").iterdir():
             shutil.copy(f, d / "assets" / f.name)
-        (d / "assets" / "favicon.svg").write_text(LOGO.replace("<svg ", '<svg xmlns="http://www.w3.org/2000/svg" '))
     urls = []
     for f in sorted(SRC.glob("*.html")):
         text = f.read_text()
