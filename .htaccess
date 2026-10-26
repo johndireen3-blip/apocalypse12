@@ -2,6 +2,10 @@ Options -Indexes
 DirectoryIndex index.html
 ErrorDocument 404 /404.html
 RewriteEngine On
+# https and no www
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^ https://apocalypse12.org%{REQUEST_URI} [L,R=301]
 # Old WordPress addresses (apocalypse12.org until 2026) -> their new pages
 RewriteRule ^2025/07/06/hello-world/?$ / [L,R=301]
 RewriteRule ^2025/07/07/modern-relevance-of-revelation/?$ /about [L,R=301]
