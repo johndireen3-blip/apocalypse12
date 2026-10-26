@@ -58,7 +58,7 @@ def add_review(body, meta):
     mark = reviewed_mark(meta)
     if not mark:
         return body
-    line = f'<p class="review-line">{mark} <a class="review-how" href="/how-this-site-is-made">How this site is made</a></p>'
+    line = f'<p class="review-line">{mark} <a class="review-how" href="/how-this-site-is-made" target="_blank" rel="noopener">How this site is made</a></p>'
     if '<p class="crumbs">' in body:
         return re.sub(r'(<p class="crumbs">.*?</p>)', lambda m: m.group(1) + "\n" + line, body, count=1, flags=re.S)
     return re.sub(r'(</section>\s*<div class="wrap[^"]*">)', lambda m: m.group(1) + "\n" + line, body, count=1)
@@ -128,6 +128,18 @@ def _walk(html, fn):
 
 def _sref(slug, ch, text):
     return f'<a class="sref" href="https://bible.usccb.org/bible/{slug}/{ch}" target="_blank" rel="noopener">{text}</a>'
+
+def new_tab_links(html):
+    """Every link in a page's main body opens in a new tab (Fr. John, Oct 26), except the breadcrumbs,
+    links within the page and mail links. Navigation and footer are built separately and keep the same tab."""
+    def fix(m):
+        tag, href = m.group(0), m.group(1)
+        if "target=" in tag or href.startswith(("#", "mailto:")):
+            return tag
+        return tag[:-1] + ' target="_blank" rel="noopener">'
+    parts = re.split(r'(<p class="crumbs">.*?</p>)', html, maxsplit=1, flags=re.S)
+    return "".join(p if p.startswith('<p class="crumbs">') else re.sub(r'<a [^>]*?href="([^"]*)"[^>]*>', fix, p)
+                   for p in parts)
 
 def link_scripture(html):
     def fn(part):
@@ -296,7 +308,7 @@ def main():
         text = f.read_text()
         m = re.match(r"<!--(\{.*?\})-->\n", text, re.S)
         meta, body = json.loads(m.group(1)), text[m.end():]
-        body = add_review(link_catechism(link_scripture(body.replace("<!--EMAIL-->", email_html()))), meta)
+        body = add_review(new_tab_links(link_catechism(link_scripture(body.replace("<!--EMAIL-->", email_html())))), meta)
         html = page(f.stem, meta, body)
         (DIST / f"{f.stem}.html").write_text(html)
         (PREV / f"{f.stem}.html").write_text(to_preview(html))
