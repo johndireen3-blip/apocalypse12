@@ -16,7 +16,7 @@ SITE = "https://apocalypse12.org"
 SITE_NAME = "The Woman & the Dragon"
 # Until launch the site lives at a temporary Hostinger address: no indexing and no redirect to the domain,
 # which still serves the old WordPress site. Set to False when apocalypse12.org is pointed here.
-PRELAUNCH = True
+PRELAUNCH = False
 TODAY = datetime.date.today().isoformat()
 # Fr. John's contact address for this site; until it is chosen, pages say it is coming.
 CONTACT_EMAIL = "frjohn@apocalypse12.org"
