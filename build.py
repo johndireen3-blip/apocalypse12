@@ -224,7 +224,7 @@ def page(slug, meta, body):
 <div class="cols">
 <div><h4>The Woman &amp; the Dragon</h4><p>Fr. John's reading of Revelation 12 and 13: a possibility tested by the marks of Scripture, and help to stand firm, with Mary and the saints, in a time of trial.</p></div>
 <div><h4>Explore</h4><ul>{''.join(f'<li><a href="{h}">{t}</a></li>' for h, t in NAV[1:])}<li><a href="/how-this-site-is-made">How This Site Is Made</a></li></ul></div>
-<div><h4>The Ephesus Challenge</h4><ul><li><a href="https://thelambsvictory.org/" target="_blank" rel="noopener">The Lamb's Victory</a>: Revelation chapter by chapter</li><li><a href="https://agreatsign.si/" target="_blank" rel="noopener">A Great Sign</a>: prophecy across the whole Bible</li></ul></div>
+<div><h4>The Ephesus Challenge</h4><ul><li><a href="https://thelambsvictory.org/" target="_blank" rel="noopener">The Lamb's Victory</a>: Revelation chapter by chapter</li><li><a href="https://agreatsign.si/" target="_blank" rel="noopener">A Great Sign</a>: prophecy across the whole Bible</li><li><a href="https://thefirstbeast.com/" target="_blank" rel="noopener">The First Beast</a>: the marks of Revelation 13</li><li><a href="https://apocalypse13.org/" target="_blank" rel="noopener">Apocalypse 13</a>: the readings of Revelation 13 weighed</li></ul></div>
 </div>
 <p class="credit">{credit_of(meta)}{(" " + reviewed_mark(meta)) if meta.get("reviewed") else ""} <a href="/how-this-site-is-made">How this site is made</a></p>
 <p class="fine">{INDEPENDENCE}</p>
