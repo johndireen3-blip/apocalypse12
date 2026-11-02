@@ -201,3 +201,10 @@ a.sref:hover{color:var(--blue);text-decoration-style:solid}
 
 blockquote.reading{font-size:1.08rem;line-height:1.65;font-style:normal;color:inherit;max-width:640px}
 blockquote.reading cite{display:block;margin-top:8px;font-size:.9rem;font-style:italic}
+
+.withdrawn{border-left:3px solid #c9b8a0;padding:2px 0 2px 16px;margin:0 0 18px}
+.withdrawn del,p del{color:#8a8172;text-decoration-thickness:1px}
+p.why{font-size:.92rem;color:#5b5446;background:#f6f1e7;border-radius:6px;padding:8px 12px;margin:-6px 0 18px}
+p.revised{margin:0 0 6px}
+ul.news{padding-left:20px;margin:0 0 20px}
+ul.news li{margin:4px 0}
