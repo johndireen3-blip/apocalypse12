@@ -77,6 +77,7 @@ def fix_ld(ld, meta):
 NAV = [
     ("/", "Home"),
     ("/stand-firm", "Stand Firm"),
+    ("/the-proposal-stated-plainly", "The Proposal"),
     ("/scorecard", "The Evidence"),
     ("/about", "About"),
     ("/contact", "Contact"),
