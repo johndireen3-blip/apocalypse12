@@ -208,3 +208,5 @@ p.why{font-size:.92rem;color:#5b5446;background:#f6f1e7;border-radius:6px;paddin
 p.revised{margin:0 0 6px}
 ul.news{padding-left:20px;margin:0 0 20px}
 ul.news li{margin:4px 0}
+p.start{font-family:var(--sans);font-size:.98rem;margin:18px 0 0;padding:12px 16px;border:1px solid #ead9a8;border-radius:10px;background:#fff}
+p.start strong{text-transform:uppercase;font-size:.8rem;letter-spacing:.08em;color:var(--mystery);margin-right:6px}
