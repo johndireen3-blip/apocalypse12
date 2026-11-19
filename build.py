@@ -79,6 +79,7 @@ NAV = [
     ("/stand-firm", "Stand Firm"),
     ("/the-proposal-stated-plainly", "The Proposal"),
     ("/scorecard", "The Evidence"),
+    ("/hope", "Hope"),
     ("/about", "About"),
     ("/contact", "Contact"),
 ]
